@@ -52,7 +52,10 @@ class App extends Component {
           />
         </Section>
         <Section title="Contacts">
-          <FindContact onHandleChange={this.onHandleChange} />
+          <FindContact
+            onHandleChange={this.onHandleChange}
+            filter={this.state.filter}
+          />
           <ul>
             {findContacts.map((contact) => (
               <Contacts

@@ -19,7 +19,11 @@ class Phonebook extends Component {
   onSubmit = (event) => {
     const { name, number } = this.state;
     event.preventDefault();
-    if (this.props.contacts.some((contact) => contact.name === name)) {
+    if (
+      this.props.contacts.some(
+        (contact) => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
       this.actionAlert(name);
     } else {
       this.props.onHandleSubmit(name, number);
